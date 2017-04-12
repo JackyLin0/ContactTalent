@@ -15,26 +15,26 @@
         <RadioButton
             android:id="@+id/tel_record"
             android:text="@string/tel_record"
-            android:drawableTop="@drawable/telrecorda"
+            android:drawableTop="@mipmap/telrecorda"
             style="@style/style_RadioButton"
             />
 
         <RadioButton
             android:id="@+id/contact"
             android:text="@string/contant"
-            android:drawableTop="@drawable/contacta"
+            android:drawableTop="@mipmap/contacta"
             style="@style/style_RadioButton"
              />
         <RadioButton
             android:id="@+id/favorite"
-            android:drawableTop="@drawable/favoritea"
+            android:drawableTop="@mipmap/favoritea"
             android:text="@string/favorite"
             style="@style/style_RadioButton"
             />
 
         <RadioButton
             android:id="@+id/setting"
-            android:drawableTop="@drawable/settinga"
+            android:drawableTop="@mipmap/settinga"
             android:text="@string/setting"
             style="@style/style_RadioButton"
             />
@@ -44,7 +44,7 @@
     <android.support.v4.view.ViewPager
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/viewPager"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorGray"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
