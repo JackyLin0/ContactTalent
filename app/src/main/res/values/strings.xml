@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ContactTalent</string>
+    <string name="tel_record">電話紀錄</string>
+    <string name="contant">聯絡人</string>
+    <string name="favorite">我的最愛</string>
+    <string name="setting">設定</string>
+</resources>
