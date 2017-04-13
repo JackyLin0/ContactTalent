@@ -5,7 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,7 +21,7 @@ public class TelRecordDAO {
     public static final String KEY_ID = "_id";
     public static final String PHOTO_COLUMN = "photo";
     public static final String NAME_COLUMN = "name";
-    public static final String DEPT_COLUMN = "dept"; //客,廠,員
+    public static final String DEPT_COLUMN = "dept"; //0:客,1:廠,2:員
     public static final String PHONE_COLUMN = "phone";
     public static final String MOBILE_COLUMN = "mobile";
     public static final String COMPANY_COLUMN = "company";
@@ -136,5 +138,18 @@ public class TelRecordDAO {
         // 回傳結果
         return result;
     }
+
+    public void sample() {
+//        long key_id, String photo, String name, String dept
+//                , String phone, String mobile, String company, String dTime, String style
+        Date current = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+        TelRecord item = new TelRecord(0,"","林昭維","0", "","0939689591","鴻奕資訊有限公司",sdf.format(current),"0");
+        TelRecord item2 = new TelRecord(0,"","林昭維","1", "","0939689591","穩贏融資有限公司",sdf.format(current),"0");
+        TelRecord item3 = new TelRecord(0,"","林昭維","2", "","0939689591","鴻奕資訊有限公司",sdf.format(current),"0");
+        insert(item);
+        insert(item2);
+        insert(item3);
+     }
 
 }
