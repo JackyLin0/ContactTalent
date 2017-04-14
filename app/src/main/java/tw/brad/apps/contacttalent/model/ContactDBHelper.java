@@ -33,13 +33,13 @@ public class ContactDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(TelRecordDAO.CREATE_TABLE);
-
+        db.execSQL(ContactBookDAO.CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
          db.execSQL("DROP TABLE IF EXISTS " + TelRecordDAO.TABLE_NAME);
-
+         db.execSQL("DROP TABLE IF EXISTS " + ContactBookDAO.TABLE_NAME);
         onCreate(db);
 
     }

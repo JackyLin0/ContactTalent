@@ -21,12 +21,12 @@ import tw.brad.apps.contacttalent.model.TelRecord;
  * Created by hungming on 2017/4/12.
  */
 
-public class TelAdapter extends BaseAdapter {
+public class ContactAdapter extends BaseAdapter {
     private  List<TelRecord> data;
     private LayoutInflater inflater;
     private Context context;
 
-    public TelAdapter(Context context, List<TelRecord> data)
+    public ContactAdapter(Context context, List<TelRecord> data)
     {
         this.context = context;
         this.data = data;

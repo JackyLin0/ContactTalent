@@ -21,15 +21,19 @@ import tw.brad.apps.contacttalent.model.TelRecordDAO;
 public class TelRecordFragment extends Fragment {
     private ListView listView;
     private TelAdapter adapter;
-    private List<TelRecord> data;
+    private List<TelRecord> data = null;
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.telrecord, container, false);
         listView = (ListView) rootView.findViewById(R.id.listview);
-        new TelRecordDAO(this.getContext()).sample();
-        data =  new TelRecordDAO(this.getContext()).getAll();
+        //  測試時期假資料
+        if ((data = new TelRecordDAO(this.getContext()).getAll()).size()==0)
+        {
+            new TelRecordDAO(this.getContext()).sample();
+        }
+
         adapter = new TelAdapter(this.getContext(),data);
         listView.setAdapter(adapter);
         return rootView;
