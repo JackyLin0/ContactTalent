@@ -15,26 +15,26 @@
         <RadioButton
             android:id="@+id/tel_record"
             android:text="@string/tel_record"
-            android:drawableTop="@mipmap/telrecorda"
+            android:drawableTop="@drawable/telrecord"
             style="@style/style_RadioButton"
-            />
+             />
 
         <RadioButton
             android:id="@+id/contact"
             android:text="@string/contant"
-            android:drawableTop="@mipmap/contacta"
+            android:drawableTop="@drawable/contact"
             style="@style/style_RadioButton"
              />
         <RadioButton
             android:id="@+id/favorite"
-            android:drawableTop="@mipmap/favoritea"
+            android:drawableTop="@drawable/favoritea"
             android:text="@string/favorite"
             style="@style/style_RadioButton"
             />
 
         <RadioButton
             android:id="@+id/setting"
-            android:drawableTop="@mipmap/settinga"
+            android:drawableTop="@drawable/settinga"
             android:text="@string/setting"
             style="@style/style_RadioButton"
             />
