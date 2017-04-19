@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity  {
         allFragment.add(settingFragment);
 
         viewPager.setAdapter(new ContactFragmentPagerAdapter(getSupportFragmentManager(),allFragment));
-        viewPager.setCurrentItem(1);
+        viewPager.setCurrentItem(2);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

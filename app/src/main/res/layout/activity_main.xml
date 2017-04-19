@@ -27,7 +27,7 @@
              />
         <RadioButton
             android:id="@+id/favorite"
-            android:drawableTop="@drawable/favoritea"
+            android:drawableTop="@drawable/favorite"
             android:text="@string/favorite"
             style="@style/style_RadioButton"
             />

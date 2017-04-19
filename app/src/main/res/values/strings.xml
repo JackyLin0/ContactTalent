@@ -5,4 +5,8 @@
     <string name="favorite">我的最愛</string>
     <string name="setting">設定</string>
     <string name="all">全部</string>
+    <string name="commonlyused">常用列表</string>
+    <string name="stroke">8劃</string>
+    <string name="city">台中市</string>
+    <string name="area">西屯區</string>
 </resources>

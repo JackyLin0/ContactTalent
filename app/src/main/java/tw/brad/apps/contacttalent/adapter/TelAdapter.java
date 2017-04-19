@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +64,6 @@ public class TelAdapter extends BaseAdapter {
             holder.phone = (TextView) convertView.findViewById(R.id.phone);
             convertView.setTag(holder);
          }
-         Log.v("Jacky",data.get(position).toString());
          holder.name.setText(data.get(position).getName());
          holder.phone.setText(data.get(position).getMobile());
          holder.dTime.setText(data.get(position).getdTime());

@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class ContactDBHelper extends SQLiteOpenHelper {
     // 資料庫名稱
     public static final String DATABASE_NAME = "contact.db";
-    public static final int VERSION = 1;
+    public static final int VERSION = 2;
     private static SQLiteDatabase database;
 
     public ContactDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
@@ -34,12 +34,15 @@ public class ContactDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(TelRecordDAO.CREATE_TABLE);
         db.execSQL(ContactBookDAO.CREATE_TABLE);
+        db.execSQL(FavoriteDAO.CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
          db.execSQL("DROP TABLE IF EXISTS " + TelRecordDAO.TABLE_NAME);
          db.execSQL("DROP TABLE IF EXISTS " + ContactBookDAO.TABLE_NAME);
+         db.execSQL("DROP TABLE IF EXISTS " + FavoriteDAO.TABLE_NAME);
+
         onCreate(db);
 
     }

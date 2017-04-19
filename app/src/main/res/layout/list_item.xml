@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    >
+    <ImageView
+        android:id="@+id/favorite_photo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/photo"     />
+
+    <TextView
+        android:id="@+id/favorite_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/favorite_photo"
+        android:padding="5dp"
+        android:text="@string/contant"
+        android:textColor="@color/colorBlack"
+        android:textSize="18dp"
+        />
+
+    <ImageView
+        android:id="@+id/favorite_dept"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src = "@drawable/dept_customer"
+        android:layout_toRightOf="@id/favorite_name"
+        android:paddingLeft="3dp"
+        />
+    <TextView
+        android:id="@+id/favorite_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/favorite_name"
+        android:layout_toRightOf="@id/favorite_photo"
+        android:paddingLeft="5dp"
+        android:paddingStart="3dp"
+        android:text="09xxxxxxxx"
+        android:textColor="#00bbff"
+        android:textSize="18dp"
+
+        />
+
+    <ImageView
+        android:id="@+id/favorite_phoneicon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_toRightOf="@id/favorite_phone"
+        android:layout_below="@id/favorite_name"
+        android:paddingLeft="5dp"
+        android:paddingStart="3dp"
+        android:src="@drawable/mobile"
+        />
+    <TextView
+        android:id="@+id/favorite_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/favorite_name"
+
+        android:text="鴻奕有限公司"
+        android:textColor="#00bbff"
+        android:textSize="14dp"
+
+        />
+
+    <TextView
+        android:id="@+id/favorite_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/favorite_phoneicon"
+        android:layout_below="@id/favorite_company"
+        android:layout_alignTop="@id/favorite_phone"
+        android:paddingLeft="10dp"
+        android:text="@string/city"
+         android:textColor="@color/colorBlack"
+        android:textSize="14dp"
+        />
+
+    <TextView
+        android:id="@+id/favorite_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/favorite_city"
+        android:layout_below="@id/favorite_company"
+        android:layout_alignTop="@id/favorite_phone"
+
+        android:text="@string/area"
+        android:textColor="@color/colorBlack"
+        android:textSize="14dp"
+        />
+
+
+</RelativeLayout>
