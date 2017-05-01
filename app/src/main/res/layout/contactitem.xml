@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorGray"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape"
+    android:padding="2dp"
     >
 <ImageView
     android:id="@+id/contact_photo"
@@ -34,80 +35,74 @@
         android:layout_height="wrap_content"
         android:src = "@drawable/dept_customer"
         android:layout_below="@id/contact_photo"
-        android:layout_alignRight="@id/contact_photo"
+        android:layout_toRightOf="@id/contact_id"
         />
 
     <TextView
         android:id="@+id/contact_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/contact_photo"
-        android:paddingLeft="5dp"
-        android:text="@string/contant"
+        android:text="@string/contact"
         android:textColor="@color/colorBlack"
         android:textSize="14dp"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/contact_phone" />
 
 
     <TextView
         android:id="@+id/contact_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/contact_name"
-        android:layout_toRightOf="@id/contact_photo"
-        android:paddingLeft="5dp"
-        android:paddingStart="3dp"
+        android:paddingLeft="10dp"
+        android:paddingStart="5dp"
         android:text="09xxxxxxxx"
-        android:textColor="#00bbff"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="14dp"
 
-        />
+        android:layout_below="@+id/contact_name"
+        android:layout_alignStart="@+id/contact_company" />
     <ImageView
         android:id="@+id/contact_phoneicon"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_toRightOf="@id/contact_phone"
-        android:layout_below="@id/contact_name"
-        android:paddingLeft="5dp"
+        android:paddingLeft="10dp"
         android:paddingStart="3dp"
         android:src="@drawable/mobile"
-        />
+        android:layout_alignTop="@+id/contact_phone"
+        android:layout_toEndOf="@+id/contact_phone" />
 
     <TextView
         android:id="@+id/contact_company"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingStart="3dp"
-        android:layout_below="@id/contact_phone"
-        android:layout_toRightOf="@id/contact_photo"
 
         android:text="鴻奕有限公司"
-        android:textColor="#00bbff"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="14dp"
 
-        />
+        android:layout_below="@+id/contact_phone"
+        android:layout_toEndOf="@+id/contact_dept" />
 
     <TextView
         android:id="@+id/postal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/contact_photo"
-        android:layout_below="@id/contact_company"
         android:text="422"
         android:textColor="#c1c1c1"
         android:textSize="14dp"
 
-        />
+        android:layout_below="@+id/contact_company"
+        android:layout_toEndOf="@+id/contact_dept" />
     <TextView
         android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/postal"
-        android:layout_below="@id/contact_company"
         android:text="台中市西屯路2段256巷6號9F-3"
         android:textColor="#c1c1c1"
         android:textSize="14dp"
 
-        />
+        android:layout_below="@+id/contact_company"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

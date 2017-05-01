@@ -4,11 +4,13 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ListView
-        android:id="@+id/listview"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/colorGray"
-        tools:listitem="@layout/telrecorditem"></ListView>
+        tools:listitem="@layout/telrecorditem">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

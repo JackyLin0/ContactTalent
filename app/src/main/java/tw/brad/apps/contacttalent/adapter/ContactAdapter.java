@@ -26,7 +26,7 @@ public class ContactAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private Context context;
 
-    public ContactAdapter(Context context, List<TelRecord> data)
+     public ContactAdapter(Context context, List<TelRecord> data)
     {
         this.context = context;
         this.data = data;

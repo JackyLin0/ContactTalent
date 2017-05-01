@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/favorite_photo"
         android:padding="5dp"
-        android:text="@string/contant"
+        android:text="@string/contact"
         android:textColor="@color/colorBlack"
         android:textSize="18dp"
         />
@@ -40,7 +40,7 @@
         android:paddingLeft="5dp"
         android:paddingStart="3dp"
         android:text="09xxxxxxxx"
-        android:textColor="#00bbff"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="18dp"
 
         />
@@ -64,7 +64,7 @@
         android:layout_toRightOf="@id/favorite_name"
 
         android:text="鴻奕有限公司"
-        android:textColor="#00bbff"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="14dp"
 
         />

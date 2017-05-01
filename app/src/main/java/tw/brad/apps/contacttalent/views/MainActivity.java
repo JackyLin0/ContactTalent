@@ -1,98 +1,139 @@
 package tw.brad.apps.contacttalent.views;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
-import android.support.v4.app.Fragment;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.TextView;
 
 import tw.brad.apps.contacttalent.R;
 import tw.brad.apps.contacttalent.adapter.ContactFragmentPagerAdapter;
 
 public class MainActivity extends AppCompatActivity  {
-    private RadioGroup radioGroup;
-    private RadioButton telRecord,contant,favorite,setting;
+    private TabLayout tabLayout;
     private ViewPager viewPager;
-    private TelRecordFragment tel_recordFragment;
-    private ContactFragment contactbookFragment;
-    private FavoriteFragment favoriteFragment;
-    private SettingFragment settingFragment;
-    private List<Fragment> allFragment;
-
+    private  TabLayout.Tab telRecord,contact,favorite,setting;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initView();
     }
 
     private void initView() {
+        tabLayout = (android.support.design.widget.TabLayout) findViewById(R.id.tab);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        telRecord = tabLayout.newTab(); // 電話紀錄
+        contact = tabLayout.newTab(); // 聯絡人
+        favorite = tabLayout.newTab(); // 我的最愛
+        setting = tabLayout.newTab(); // 設定
+        /*電話紀錄*/
+
+
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            if (tab != null) tab.setCustomView(R.layout.tab_items);
+
+        }
+        View view1 = getLayoutInflater().inflate(R.layout.tab_items, null);
+        view1.findViewById(R.id.img_title).setBackgroundResource(R.mipmap.telrecorda);
+        TextView tv1= (TextView) view1.findViewById(R.id.tv_title);
+        tv1.setText(getResources().getString(R.string.tel_record));
+        tv1.setGravity(Gravity.CENTER);
+        telRecord.setCustomView(view1);
+
+        View view2 = getLayoutInflater().inflate(R.layout.tab_items, null);
+        view2.findViewById(R.id.img_title).setBackgroundResource(R.mipmap.contacta);
+        TextView tv2 = (TextView) view2.findViewById(R.id.tv_title);
+        tv2.setText(getResources().getString(R.string.contact));
+        tv2.setGravity(Gravity.CENTER);
+
+        contact.setCustomView(view2);
+
+        View view3 = getLayoutInflater().inflate(R.layout.tab_items, null);
+        view3.findViewById(R.id.img_title).setBackgroundResource(R.mipmap.favoritea);
+        TextView tv3 = (TextView) view3.findViewById(R.id.tv_title);
+        tv3.setText(getResources().getString(R.string.favorite));
+        tv3.setGravity(Gravity.CENTER);
+
+        favorite.setCustomView(view3);
+
+        View view4 = getLayoutInflater().inflate(R.layout.tab_items, null);
+        view4.findViewById(R.id.img_title).setBackgroundResource(R.mipmap.settinga);
+        TextView tv4 = (TextView) view4.findViewById(R.id.tv_title);
+        tv4.setText(getResources().getString(R.string.setting));
+        tv4.setGravity(Gravity.CENTER);
+
+        setting.setCustomView(view4);
+
+
+        tabLayout.addTab(telRecord);
+        tabLayout.addTab(contact);
+        tabLayout.addTab(favorite);
+        tabLayout.addTab(setting);
+
         viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager.setAdapter(new ContactFragmentPagerAdapter(getSupportFragmentManager(),tabLayout));
+        tabLayout.setSelectedTabIndicatorColor(Color.WHITE);
+        tabLayout.setSelectedTabIndicatorHeight(10);
 
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        telRecord = (RadioButton) findViewById(R.id.tel_record);
-        contant = (RadioButton) findViewById(R.id.contact);
-        favorite = (RadioButton) findViewById(R.id.favorite);
-        setting = (RadioButton) findViewById(R.id.setting);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-
-                switch (checkedId) {
-                    case R.id.tel_record:
-                        viewPager.setCurrentItem(0, false);
-                        break;
-                    case R.id.contact:
-                        viewPager.setCurrentItem(1, false);
-                        break;
-                    case R.id.favorite:
-                        viewPager.setCurrentItem(2, false);
-                        break;
-                    case R.id.setting:
-                        viewPager.setCurrentItem(3, false);
-                        break;
-                }
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+           @Override
+           public void onTabSelected(TabLayout.Tab tab) {
+               viewPager.setCurrentItem(tabLayout.getSelectedTabPosition());
             }
-        });
 
-        tel_recordFragment = new TelRecordFragment(); //聯絡人
-        contactbookFragment = new ContactFragment(); //電話簿
-        favoriteFragment = new FavoriteFragment(); //我的最愛
-        settingFragment = new SettingFragment(); //我的最愛
-        allFragment = new ArrayList<Fragment>();
-        allFragment.add(tel_recordFragment);
-        allFragment.add(contactbookFragment);
-        allFragment.add(favoriteFragment);
-        allFragment.add(settingFragment);
+           @Override
+           public void onTabUnselected(TabLayout.Tab tab) {
+               Log.v("Jacky","onTabUnselected"+tab.getPosition());
 
-        viewPager.setAdapter(new ContactFragmentPagerAdapter(getSupportFragmentManager(),allFragment));
-        viewPager.setCurrentItem(2);
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+           }
+
+           @Override
+           public void onTabReselected(TabLayout.Tab tab) {
+               Log.v("Jacky","onTabReselected"+tab.getPosition());
+
+           }
+       });
+
+       viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
 
             }
 
             @Override
             public void onPageSelected(int position) {
-                switch (position) {
+                telRecord.getCustomView().findViewById(R.id.img_title).setBackgroundResource(R.mipmap.telrecorda);
+                contact.getCustomView().findViewById(R.id.img_title).setBackgroundResource(R.mipmap.contacta);
+                favorite.getCustomView().findViewById(R.id.img_title).setBackgroundResource(R.mipmap.favoritea);
+                setting.getCustomView().findViewById(R.id.img_title).setBackgroundResource(R.mipmap.settinga);
+                switch (position)
+                {
                     case 0:
-                        radioGroup.check(R.id.tel_record);
+                        telRecord.getCustomView().findViewById(R.id.img_title).setBackgroundResource(R.mipmap.telrecordb);
+                        tabLayout.getTabAt(0).select();
                         break;
-
                     case 1:
-                        radioGroup.check(R.id.contact);
+                        contact.getCustomView().findViewById(R.id.img_title).setBackgroundResource(R.mipmap.contactb);
+                        tabLayout.getTabAt(1).select();
+
                         break;
                     case 2:
-                        radioGroup.check(R.id.favorite);
+                        favorite.getCustomView().findViewById(R.id.img_title).setBackgroundResource(R.mipmap.favoriteb);
+                        tabLayout.getTabAt(2).select();
+
                         break;
                     case 3:
-                        radioGroup.check(R.id.setting);
+                        setting.getCustomView().findViewById(R.id.img_title).setBackgroundResource(R.mipmap.settingb);
+
+                        tabLayout.getTabAt(3).select();
                         break;
                 }
             }
@@ -102,6 +143,8 @@ public class MainActivity extends AppCompatActivity  {
 
             }
         });
+
+
 
 
 

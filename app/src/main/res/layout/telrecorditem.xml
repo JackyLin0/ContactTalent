@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorGray"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:background="@drawable/shape"
     >
 <ImageView
     android:id="@+id/photo"
@@ -10,7 +11,8 @@
     android:layout_alignParentTop="true"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:src="@drawable/favoritea"
+    android:src="@mipmap/favoritea"
+    android:padding="2dp"
     />
 
     <TextView
@@ -19,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/photo"
         android:paddingLeft="5dp"
-        android:text="@string/contant"
+        android:text="@string/contact"
         android:textColor="@color/colorBlack"
         android:textSize="18dp"
         />
@@ -62,11 +64,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/phoneicon"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="50dp"
         android:paddingStart="3dp"
         android:text="鴻奕有限公司"
-        android:textColor="#00bbff"
-        android:textSize="18dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="14dp"
 
         />
 
@@ -76,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/phoneicon"
         android:layout_below="@id/company"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="50dp"
         android:text="2017/02/17 10:01:08"
         android:textColor="#c1c1c1"
         android:textSize="14dp"

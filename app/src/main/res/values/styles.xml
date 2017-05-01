@@ -8,16 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="style_RadioButton">
+    <style name="style_Tab">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_height">60dp</item>
         <item name="android:button">@null</item>
         <item name="android:background">#00bbff</item>
-        <item name="android:layout_weight">1</item>
+
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:padding">3dp</item>
-    </style>
+     </style>
 
 </resources>

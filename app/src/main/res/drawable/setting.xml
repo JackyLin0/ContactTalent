@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:drawable="@mipmap/telrecorda"
+        android:drawable="@mipmap/settinga"
         android:state_checked="false"
 
         />
     <item
-        android:drawable="@mipmap/telrecordb"
+        android:drawable="@mipmap/settingb"
         android:state_checked="true"/>
 </selector>

@@ -4,10 +4,10 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +20,7 @@ import tw.brad.apps.contacttalent.model.TelRecord;
  * Created by hungming on 2017/4/12.
  */
 
-public class TelAdapter extends BaseAdapter {
+public class TelAdapter extends RecyclerView.Adapter<TelAdapter.ViewHolder> {
     private  List<TelRecord> data;
     private LayoutInflater inflater;
     private Context context;
@@ -33,37 +33,33 @@ public class TelAdapter extends BaseAdapter {
 
     }
 
-    @Override
-    public int getCount() {
-        return data.size();
-    }
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView name,phone,company,dTime;
+        ImageView photo,dept;
 
-    @Override
-    public Object getItem(int position) {
-        return data.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Holder holder;
-        if(convertView !=null){
-            holder  = (Holder) convertView.getTag();
+        public ViewHolder(View v) {
+            super(v);
+            name = (TextView) v.findViewById(R.id.name);
+            company = (TextView) v.findViewById(R.id.company);
+            dept = (ImageView) v.findViewById(R.id.dept);
+            dTime = (TextView) v.findViewById(R.id.dTime);
+            phone = (TextView) v.findViewById(R.id.phone);
+            photo = (ImageView) v.findViewById(R.id.photo);
         }
-        else {
-            convertView = inflater.inflate(R.layout.telrecorditem, parent, false);
-            holder = new Holder();
-            holder.name = (TextView) convertView.findViewById(R.id.name);
-            holder.company = (TextView) convertView.findViewById(R.id.company);
-            holder.dept = (ImageView) convertView.findViewById(R.id.dept);
-            holder.dTime = (TextView) convertView.findViewById(R.id.dTime);
-            holder.phone = (TextView) convertView.findViewById(R.id.phone);
-            convertView.setTag(holder);
-         }
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.telrecorditem, parent, false);
+        ViewHolder vh = new ViewHolder(v);
+
+        return vh;
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+         holder.photo.setImageResource(R.drawable.photo);
          holder.name.setText(data.get(position).getName());
          holder.phone.setText(data.get(position).getMobile());
          holder.dTime.setText(data.get(position).getdTime());
@@ -77,15 +73,15 @@ public class TelAdapter extends BaseAdapter {
             case 2: bm = BitmapFactory.decodeResource(res,R.drawable.dept_employee); break;
         }
         holder.dept.setImageBitmap(bm);
+     }
 
-
-        return convertView;
+    @Override
+    public int getItemCount() {
+        return data.size();
     }
 
 
-    class Holder{
-        TextView name,phone,company,dTime;
-        ImageView dept;
-    }
+
+
 
 }

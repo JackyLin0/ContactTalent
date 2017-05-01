@@ -3,42 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="tw.brad.apps.contacttalent.views.MainActivity">
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        >
-        <RadioButton
-            android:id="@+id/tel_record"
-            android:text="@string/tel_record"
-            android:drawableTop="@drawable/telrecord"
-            style="@style/style_RadioButton"
-             />
 
-        <RadioButton
-            android:id="@+id/contact"
-            android:text="@string/contant"
-            android:drawableTop="@drawable/contact"
-            style="@style/style_RadioButton"
-             />
-        <RadioButton
-            android:id="@+id/favorite"
-            android:drawableTop="@drawable/favorite"
-            android:text="@string/favorite"
-            style="@style/style_RadioButton"
-            />
+    <android.support.design.widget.TabLayout
+        android:id = "@+id/tab"
+        style ="@style/style_Tab"
+        app:tabGravity="fill"
+        app:tabMaxWidth="0dp"
 
-        <RadioButton
-            android:id="@+id/setting"
-            android:drawableTop="@drawable/settinga"
-            android:text="@string/setting"
-            style="@style/style_RadioButton"
-            />
-    </RadioGroup>
+        />
+
+
 
 
     <android.support.v4.view.ViewPager
@@ -46,6 +23,10 @@
         android:id="@+id/viewPager"
         android:background="@color/colorGray"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+        />
 
 </LinearLayout>

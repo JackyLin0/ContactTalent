@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ContactTalent</string>
     <string name="tel_record">電話紀錄</string>
-    <string name="contant">聯絡人</string>
+    <string name="contact">聯絡人</string>
     <string name="favorite">我的最愛</string>
     <string name="setting">設定</string>
     <string name="all">全部</string>
@@ -9,4 +9,10 @@
     <string name="stroke">8劃</string>
     <string name="city">台中市</string>
     <string name="area">西屯區</string>
+    <string name="id">編號</string>
+    <string name="name">名稱</string>
+    <string name="string_contact">＠string/contact</string>
+    <string name="address">地址</string>
+    <string name="memo">備註</string>
+    <string name="tel">電話/手機</string>
 </resources>

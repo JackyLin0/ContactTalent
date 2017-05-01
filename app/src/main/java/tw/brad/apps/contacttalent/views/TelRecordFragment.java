@@ -2,10 +2,11 @@ package tw.brad.apps.contacttalent.views;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ import tw.brad.apps.contacttalent.model.TelRecordDAO;
  */
 
 public class TelRecordFragment extends Fragment {
-    private ListView listView;
+    private RecyclerView recyclerView;
     private TelAdapter adapter;
     private List<TelRecord> data = null;
     @Override
@@ -27,7 +28,12 @@ public class TelRecordFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.telrecord, container, false);
-        listView = (ListView) rootView.findViewById(R.id.listview);
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.recycleView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(container.getContext());
+
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+
         //  測試時期假資料
         if ((data = new TelRecordDAO(this.getContext()).getAll()).size()==0)
         {
@@ -35,7 +41,8 @@ public class TelRecordFragment extends Fragment {
         }
 
         adapter = new TelAdapter(this.getContext(),data);
-        listView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
         return rootView;
     }
 }
