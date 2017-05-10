@@ -3,9 +3,8 @@ package tw.brad.apps.contacttalent.views;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 import tw.brad.apps.contacttalent.R;
 import tw.brad.apps.contacttalent.adapter.ContactFragmentPagerAdapter;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends FragmentActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private  TabLayout.Tab telRecord,contact,favorite,setting;
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity  {
         contact = tabLayout.newTab(); // 聯絡人
         favorite = tabLayout.newTab(); // 我的最愛
         setting = tabLayout.newTab(); // 設定
-        /*電話紀錄*/
 
 
         for (int i = 0; i < tabLayout.getTabCount(); i++) {
@@ -90,13 +88,11 @@ public class MainActivity extends AppCompatActivity  {
 
            @Override
            public void onTabUnselected(TabLayout.Tab tab) {
-               Log.v("Jacky","onTabUnselected"+tab.getPosition());
 
            }
 
            @Override
            public void onTabReselected(TabLayout.Tab tab) {
-               Log.v("Jacky","onTabReselected"+tab.getPosition());
 
            }
        });

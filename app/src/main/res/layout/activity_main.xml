@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/titleFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,26 +12,27 @@
     android:orientation="vertical"
     tools:context="tw.brad.apps.contacttalent.views.MainActivity">
 
+
+
     <android.support.design.widget.TabLayout
         android:id = "@+id/tab"
         style ="@style/style_Tab"
         app:tabGravity="fill"
         app:tabMaxWidth="0dp"
-
         />
 
+        <FrameLayout
+            android:id ="@+id/mainFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorGray"
 
-
-    <android.support.v4.view.ViewPager
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/viewPager"
-        android:background="@color/colorGray"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
-        />
-
+            />
+        </FrameLayout>
 </LinearLayout>
+</FrameLayout>

@@ -105,4 +105,14 @@
         android:layout_below="@+id/contact_company"
         android:layout_centerHorizontal="true" />
 
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/detail"
+        android:foregroundGravity="center_vertical"
+        android:paddingTop="30dp"
+        android:paddingRight="10dp"
+        android:layout_alignParentRight="true" />
+
 </RelativeLayout>

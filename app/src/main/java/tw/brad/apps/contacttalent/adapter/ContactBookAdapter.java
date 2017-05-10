@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import tw.brad.apps.contacttalent.R;
 import tw.brad.apps.contacttalent.model.ContactBook;
+import tw.brad.apps.contacttalent.views.CustomerFragment;
 
 /**
  * Created by hungming on 2017/4/12.
@@ -24,17 +26,19 @@ public class ContactBookAdapter extends RecyclerView.Adapter<ContactBookAdapter.
     private  List<ContactBook> data;
     private LayoutInflater inflater;
     private Context context;
+    FragmentManager supportFragment;
 
-    public  ContactBookAdapter(Context context,List<ContactBook> data)
+    public  ContactBookAdapter(Context context, List<ContactBook> data, FragmentManager fm)
     {
         this.context = context;
         this.data = data;
+        supportFragment = fm ;
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView contact_id,contact_name , contact_phone,contact_company,postal,address ;
-        ImageView contact_photo,contact_phoneicon,contact_dept;
+        ImageView contact_photo,contact_phoneicon,contact_dept,next;
         public ViewHolder(View v) {
             super(v);
              contact_photo = (ImageView) v.findViewById(R.id.contact_photo);
@@ -46,6 +50,7 @@ public class ContactBookAdapter extends RecyclerView.Adapter<ContactBookAdapter.
              contact_phone = (TextView) v.findViewById(R.id.contact_phone);
              postal = (TextView) v.findViewById(R.id.postal);
              address = (TextView) v.findViewById(R.id.address);
+             next = (ImageView) v.findViewById(R.id.next);
         }
     }
 
@@ -77,8 +82,23 @@ public class ContactBookAdapter extends RecyclerView.Adapter<ContactBookAdapter.
             case 2: bm = BitmapFactory.decodeResource(res,R.drawable.dept_employee); break;
         }
         holder.contact_dept.setImageBitmap(bm);
+        holder.next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+              //  FragmentManager fm = ((Activity) context).getFragmentManager();
+                CustomerFragment newFragment = new CustomerFragment();
+                newFragment.setFragmentManager(supportFragment);
+                supportFragment.beginTransaction()
+                  .replace(R.id.titleFrame,newFragment)
+                  .addToBackStack("")
+                  .commit();
+            }
+        });
+
 //
     }
+
 
     @Override
     public int getItemCount() {

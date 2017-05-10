@@ -15,4 +15,10 @@
     <string name="address">地址</string>
     <string name="memo">備註</string>
     <string name="tel">電話/手機</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="customer_Info">客戶資料</string>
+    <string name="priceReport">客戶報價</string>
+    <string name="saleInfo">銷售資料</string>
 </resources>

@@ -48,7 +48,7 @@ public class ContactFragment  extends Fragment {
             new ContactBookDAO(this.getContext()).sample();
         }
 
-        adapter = new ContactBookAdapter(this.getContext(),data);
+        adapter = new ContactBookAdapter(this.getContext(),data,getFragmentManager());
         listView.setAdapter(adapter);
         return rootView;
     }
@@ -58,6 +58,9 @@ public class ContactFragment  extends Fragment {
         getActivity().getMenuInflater().inflate(R.menu.general_menu, menu);
      }
 
+
+     //選單
+     //
     public boolean onContextItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.all:
