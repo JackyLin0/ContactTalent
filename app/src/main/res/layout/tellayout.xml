@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:padding="3dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:id="@+id/ll5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_dark"
+        android:paddingTop="3dp"
+        android:paddingLeft="3dp"
+        android:layout_weight="1"
+
+
+        >
+        <TextView
+            style="@style/text_format"
+            android:text="電話1"
+            android:textColor="#bababa"
+            />
+
+        <TextView
+            style="@style/text_format"
+            android:id="@+id/tel1"
+            android:text="04 3500 7805"
+            android:textColor="@color/color00bbff"
+
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_dark"
+        android:paddingTop="3dp"
+        android:paddingLeft="3dp"
+        android:layout_weight="1"
+
+        >
+        <TextView
+            style="@style/text_format"
+            android:text="傳真機"
+            android:textColor="#bababa"
+            />
+
+        <TextView
+            style="@style/text_format"
+            android:id="@+id/fax1"
+            android:text="04 3500 7807"
+            android:textColor="@color/color00bbff"
+
+            />
+    </LinearLayout>
+</LinearLayout>
+

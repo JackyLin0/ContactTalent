@@ -21,4 +21,6 @@
     <string name="customer_Info">客戶資料</string>
     <string name="priceReport">客戶報價</string>
     <string name="saleInfo">銷售資料</string>
+    <string name="custom_title">客戶名稱</string>
+    <string name="custom_name">鴻奕資訊有限公司</string>
 </resources>

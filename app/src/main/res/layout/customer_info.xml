@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:include="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGray"
-    >
+    android:background="@color/colorGray">
 
     <LinearLayout
         android:id ="@+id/top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="drawable/shape"
+        android:background="@drawable/shape_dark"
         android:layout_margin="5dp"
         android:orientation="horizontal"
         >
     <TextView
+        style="@style/text_format"
         android:id="@+id/custom_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+         android:layout_alignParentLeft="true"
         android:text="@string/custom_title"
         android:textColor="#bababa"
-        />
+         />
 
         <TextView
+            style="@style/text_format"
             android:id="@+id/custom_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+             android:layout_alignParentLeft="true"
             android:text="@string/custom_name"
             android:textColor="#000"
             android:paddingLeft="10dp"
+
             />
     </LinearLayout>
 
@@ -37,10 +37,9 @@
         android:layout_below="@id/top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-         android:layout_margin="5dp"
+        android:layout_margin="5dp"
 
-        >
+        android:id="@+id/relativeLayout">
 
         <ImageView
             android:id="@+id/img1"
@@ -49,33 +48,127 @@
             android:padding="3dp"
             />
         <LinearLayout
+            android:id="@+id/ll1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            style="@drawable/shape"
+            style="@drawable/shape_dark"
             android:layout_toRightOf="@id/img1"
-             >
+            android:paddingTop="3dp"
+            >
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/text_format"
                 android:text="客戶編號"
                 android:textColor="#bababa"
 
                 />
 
             <TextView
-                android:id="@+id/customer_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HY001"
-                android:textSize="14dp"
-                android:textColor="#000"
+                 style="@style/text_format"
+                 android:id="@+id/customer_id"
+                 android:text="HY001"
+                 android:textColor="#000"
 
                 />
 
         </LinearLayout>
 
-    </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_dark"
+            android:layout_toRightOf="@id/ll1"
+            android:paddingLeft="3dp"
+            android:paddingTop="3dp"
+
+            >
+            <TextView
+                style="@style/text_format"
+                 android:text="客戶簡稱"
+                android:textColor="#bababa"
+
+                />
+
+            <TextView
+                style="@style/text_format"
+                android:id="@+id/customer_simple_id"
+                 android:text="鴻奕資訊"
+                 android:textColor="#000"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/ll1"
+            android:layout_toRightOf="@id/img1"
+            android:background="@drawable/shape_dark"
+            android:paddingTop="3dp"
+            >
+            <TextView
+                style="@style/text_format"
+                 android:text="負責人"
+                android:textColor="#bababa"
+
+                />
+
+            <TextView
+                style="@style/text_format"
+                android:id="@+id/owner"
+                  android:text="陳啟賢"
+                 android:textColor="#000"
+
+                />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/ll2"
+            android:layout_toRightOf="@id/ll3"
+            android:layout_alignLeft="@+id/ll2"
+            android:background="@drawable/shape_dark"
+            android:paddingTop="3dp"
+
+            >
+            <TextView
+                style="@style/text_format"
+                android:text="業務人員"
+                android:textColor="#bababa"
+
+                />
+
+            <TextView
+                style="@style/text_format"
+                android:id="@+id/saleman"
+                 android:text="林昭雄"
+                 android:textColor="#000"
+
+                />
+          </LinearLayout>
+        <include layout="@layout/tellayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll3"
+            android:id="@+id/layout1"
+            />
+        <include layout="@layout/tellayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout1"
+            />
+
+     </RelativeLayout>
 
 
 
